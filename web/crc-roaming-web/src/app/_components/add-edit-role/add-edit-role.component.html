@@ -1,0 +1,65 @@
+<div class="card border-primary h-100">
+    <div class="card-header bg-blue text-white p-2" translate>{{editMode ? 'roles.editTitle' : 'roles.addTitle'}}</div>
+    <mat-dialog-content>
+        <div class="card-body">
+            <form [formGroup]="addEditForm" (ngSubmit)="onSubmit()" class="d-flex flex-column h-100">
+                
+                <div class="form-group">
+                    <label for="name" translate>roles.name</label>
+                    <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+                    <div class="invalid-feedback" *ngIf="form.name.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.name.errors?.maxlength" translate>errors.tooLong</div>
+                </div>
+              
+                <div class="form-group">
+                    <label for="description" translate>roles.description</label>
+                    <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.description.errors }">
+                    <div class="invalid-feedback" *ngIf="form.description.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.description.errors?.maxlength" translate>errors.tooLong</div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="toSingleUser" translate>roles.toSingleUser</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="toSingleUser" name="toSingleUser" [value]="true" [ngClass]="{ 'is-invalid': submitted && form.toSingleUser.errors }">
+                        <label class="form-check-label" for="toSingleUser" translate>Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="toSingleUser" name="toSingleUser" [value]="false" [ngClass]="{ 'is-invalid': submitted && form.toSingleUser.errors }">
+                        <label class="form-check-label" for="toSingleUser" translate>No</label>   
+                        <div class="invalid-feedback" translate>errors.required</div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="enabled" translate>roles.enabled</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="enabled" name="enabled" [value]="true" [ngClass]="{ 'is-invalid': submitted && form.enabled.errors }">
+                        <label class="form-check-label" for="euMember" translate>Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="enabled" name="enabled" [value]="false" [ngClass]="{ 'is-invalid': submitted && form.enabled.errors }">
+                        <label class="form-check-label" for="enabled" translate>No</label>   
+                        <div class="invalid-feedback" translate>errors.required</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="permissions" translate>roles.permissions</label>
+                    <div class="form-check" *ngFor="let item of allPermissions">
+                        <input type="checkbox" class="form-check-input" (change)="onChange(item.id, $event.target.checked)" [checked]="checkId(item.id)" [disabled]=isDisabled(item)>
+                        <label class="form-check-label">
+                            {{item.description}}
+                        </label>
+                    </div>
+                    <div class="text-danger" *ngIf="emptyCheckPermissions"><small translate>errors.required</small></div>
+                </div>
+    
+                <div class="d-flex justify-content-end mt-auto">
+                    <button [disabled]="loading" class="btn btn-sm btn-primary mr-1" translate>btn.save</button>
+                    <button class="btn btn-sm btn-primary" mat-button [mat-dialog-close]="true" translate>btn.close</button>
+                </div>
+            </form>
+        </div>
+    </mat-dialog-content>
+</div>

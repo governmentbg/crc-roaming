@@ -1,0 +1,38 @@
+<div class="container-fluid py-3">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>report.numberOfRegisteredMobileUsers</h3>
+    </div>
+
+    <div class="input-group mb-2">
+        <div class="input-group-prepend"><span class="input-group-text" id="fromDate" translate>filter.fromDate</span></div>
+        <input class="form-control" aria-describedby="fromDate" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button"> <i class="fa fa-calendar"></i> </button>
+        </div>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" id="toDate" translate>filter.toDate</span></div>
+        <input class="form-control" aria-describedby="fromDate" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+        </div>
+
+        <div class="input-group-append ml-2">
+            <button class="btn btn btn-success report-button-style" (click)="filter()" translate>button.search</button>
+            <button class="btn btn btn-danger ml-2 report-button-style " (click)="clearFilters()" translate>button.clearFilter</button>
+            <button class="btn btn-outline-secondary ml-2" (click)="export('pdf')" type="button"> <i class="fa fa-file-pdf-o"></i> </button>
+            <button class="btn btn-outline-secondary ml-2" (click)="export('xlsx')" type="button"> <i class="fa fa-file-excel-o"></i> </button>
+        </div>
+    </div>
+
+    <table class="table table-bordered">
+        <tr>
+            <td>{{'report.numberOfRegUsers' | translate}}:</td>
+            <td>{{report.numberOfRegisteredUsers}}</td>
+        </tr>
+        <tr>
+            <td>{{'report.lastCreatedUserDate' | translate}}:</td>
+            <td>{{report.dateOfLastCreatedUser | date: formatTS}}</td>
+        </tr>
+    </table>
+
+</div>

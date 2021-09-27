@@ -1,0 +1,53 @@
+<div class="container-fluid d-flex flex-column px-5 py-3 h-100">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>menu.reports.blockingEventsPie</h3>
+    </div>
+
+    <div class="input-group mb-2">
+        <div class="input-group-prepend"><span class="input-group-text" id="fromDate" translate>fromDate</span></div>
+        <input class="form-control" aria-describedby="fromDate" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button"> <i class="fa fa-calendar"></i> </button>
+        </div>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" id="toDate" translate>toDate</span></div>
+        <input class="form-control" aria-describedby="fromDate" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+        </div>
+
+        <div class="input-group-append ml-2">
+            <button class="btn btn-outline-success" type="button" (click)="filter()" translate>btn.search</button>
+            <button class="btn btn-outline-danger ml-2" type="button" (click)="clearFilters()" translate>btn.clear</button>
+            <button class="btn btn-outline-secondary ml-2" (click)="exportChart()" type="button"> <i class="fa fa-file-pdf-o"></i> </button>
+        </div>
+    </div>
+    <span class="text-muted" translate>report.pieChartHint</span>
+
+    <div class="pt-5 row h-100">
+        <div class="col text-center w-50">
+            <h5 class="text-blue" translate>report.reportedBlockingCountryChart</h5>
+            <canvas baseChart *ngIf="countryChartData" id="countryChart"
+                [data]="countryChartData" 
+                [labels]="countryChartLabels" 
+                [chartType]="chartType"
+                [options]="chartOptions"
+                [legend]="chartLegend"
+                [colors]="chartColors">
+            </canvas>
+        </div>
+
+        <div class="col text-center w-50">
+            <h5 class="text-blue" translate>report.reportedBlockingOperatorChart</h5>
+            <canvas baseChart *ngIf="operatorChartData" id="operatorChart"
+                [data]="operatorChartData" 
+                [labels]="operatorChartLabels" 
+                [chartType]="chartType"
+                [options]="chartOptions"
+                [legend]="chartLegend"
+                [colors]="chartColors">
+            </canvas>
+        </div>
+    </div>
+</div>
+

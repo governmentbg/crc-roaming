@@ -1,0 +1,28 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"rootDir": "./",
+		"outDir": "../dist",
+		"sourceMap": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"target": "es2020",
+		"declaration": true,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+
+		"lib": [ "dom", "es2020" ]
+	},
+	"angularCompilerOptions": {
+		"enableIvy": false,
+		"fullTemplateTypeCheck": true,
+		"skipTemplateCodegen": true,
+		"strictInjectionParameters": true,
+		"strictMetadataEmit": true,
+		"enableResourceInlining": true
+	},
+	"exclude":  [ "./test.ts", "**/*.spec.ts" ],
+	"files":    [ "./index.ts" ]
+}

@@ -1,0 +1,52 @@
+<div class="card border-primary h-100">
+    <div class="card-header bg-blue text-white p-2" translate>{{editMode ? 'users.editTitle' : 'users.addTitle'}}</div>
+    <mat-dialog-content>
+        <div class="card-body">
+            <form [formGroup]="addEditForm" (ngSubmit)="onSubmit()" class="d-flex flex-column h-100">
+                
+                <div class="form-group">
+                    <label for="fullName" translate>users.fullName</label>
+                    <input type="text" formControlName="fullName" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.fullName.errors }">
+                    <div class="invalid-feedback" *ngIf="form.fullName.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.fullName.errors?.maxlength" translate>errors.tooLong</div>
+                </div>
+              
+                <div class="form-group">
+                    <label for="email" translate>users.email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.email.errors }">
+                    <div class="invalid-feedback" *ngIf="form.email.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.email.errors?.maxlength" translate>errors.tooLong</div>
+                    <div class="invalid-feedback" *ngIf="form.email.errors?.pattern" translate>errors.incorrectEmail</div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="enabled" translate>users.enabled</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="enabled" name="enabled" [value]="true" [ngClass]="{ 'is-invalid': submitted && form.enabled.errors }">
+                        <label class="form-check-label" for="euMember" translate>Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="enabled" name="enabled" [value]="false" [ngClass]="{ 'is-invalid': submitted && form.enabled.errors }">
+                        <label class="form-check-label" for="enabled" translate>No</label>   
+                        <div class="invalid-feedback" translate>errors.required</div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="roleId" translate>users.role</label>
+                    <select class="custom-select" formControlName="roleId" [ngClass]="{ 'is-invalid': submitted && form.roleId.errors }">
+                        <option *ngFor="let role of roles" [value]=role.id>
+                            {{role.name + " (" + role.description + ")"}}
+                        </option>
+                    </select>
+                    <div class="invalid-feedback"translate>errors.required</div>
+                </div>
+    
+                <div class="d-flex justify-content-end mt-auto">
+                    <button [disabled]="loading" class="btn btn-sm btn-primary mr-1" translate>btn.save</button>
+                    <button class="btn btn-sm btn-primary" mat-button [mat-dialog-close] translate>btn.close</button>
+                </div>
+            </form>
+        </div>
+    </mat-dialog-content>
+</div>

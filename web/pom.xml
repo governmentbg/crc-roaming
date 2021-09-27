@@ -1,0 +1,154 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>bg.infosys.crc</groupId>
+	<artifactId>crc-roaming</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>crc-roaming</name>
+
+	<modules>
+		<module>crc-roaming-db</module>
+		<module>crc-roaming-ws</module>
+		<module>crc-roaming-web</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>google-m2</id>
+			<name>Google Maven2 Repository</name>
+			<url>https://maven.google.com</url>
+		</repository>
+		<repository>
+			<id>infosys-m2</id>
+			<name>Infosys Maven2 Repository</name>
+			<url>http://devops.infosys.bg/artifactory/maven2</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<!-- Java and Maven plug-ins Versions -->
+		<v.java>11</v.java>
+		<v.plugin.compiler>3.8.1</v.plugin.compiler>
+		<v.plugin.war>3.2.3</v.plugin.war>
+		<v.plugin.clean>2.5</v.plugin.clean>
+		<v.plugin.frontend>1.11.3</v.plugin.frontend>
+		<v.node>v14.16.1</v.node>
+		<v.firebase>7.1.1</v.firebase>
+
+		<!-- Default encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Infosys Common Version -->
+		<v.infosys.common>2.14</v.infosys.common>
+
+		<!-- Infosys Common WS -->
+		<v.infosys.common.ws>1.8</v.infosys.common.ws>
+
+		<!-- Javax Servlet Api Version -->
+		<v.javax.servlet>3.0.1</v.javax.servlet>
+
+		<!-- Infosys OAuth Security Version -->
+		<v.infosys.oauth.security>1.20</v.infosys.oauth.security>
+		
+		<!-- Jackson (JSON) Version -->
+		<v.jackson>2.12.2</v.jackson>
+
+		<!-- Java Mail Api Version -->
+		<v.mail>1.6.2</v.mail>
+		
+		<!-- Google OAuth Version -->
+		<v.google.oauth>1.31.2</v.google.oauth>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<profile>dev</profile>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<properties>
+				<profile>test</profile>
+			</properties>
+		</profile>
+		
+		<profile>
+			<id>prod</id>
+			<properties>
+				<profile>prod</profile>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<filters>
+			<filter>../profiles/${profile}.properties</filter>
+		</filters>
+
+		<finalName>${project.artifactId}</finalName>
+
+		<plugins>
+			<!-- Compile java -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${v.plugin.compiler}</version>
+				<configuration>
+					<release>${v.java}</release>
+				</configuration>
+			</plugin>
+
+			<!-- Build war -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${v.plugin.war}</version>
+				<configuration>
+					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+					<packagingExcludes>
+						<!-- Excludes directories or files from the war file. Separate them 
+							with commas, eg: UI/js/templates, WEB-INF/config/smt.properties -->
+					</packagingExcludes>
+					<webResources>
+						<webResource>
+							<directory>src/main/webapp/WEB-INF</directory>
+							<targetPath>/WEB-INF</targetPath>
+							<filtering>true</filtering>
+						</webResource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- Infosys Common Dependency -->
+		<dependency>
+			<groupId>bg.infosys.common</groupId>
+			<artifactId>infosys-common</artifactId>
+			<version>${v.infosys.common}</version>
+		</dependency>
+
+		<!-- Infosys OAuth Security Dependency -->
+		<dependency>
+			<groupId>bg.infosys.common</groupId>
+			<artifactId>infosys-oauth-security</artifactId>
+			<version>${v.infosys.oauth.security}</version>
+		</dependency>
+	</dependencies>
+
+</project>

@@ -1,0 +1,102 @@
+<div class="container-fluid py-3">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>menu.reports.reportedEvents</h3>
+    </div>
+
+    <div class="input-group mb-2">
+        <div class="input-group-prepend"><span class="input-group-text" id="fromDate" translate>filter.fromDate</span></div>
+        <input class="form-control" aria-describedby="fromDate" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button"> <i class="fa fa-calendar"></i> </button>
+        </div>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" id="toDate" translate>filter.toDate</span></div>
+        <input class="form-control" aria-describedby="fromDate" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+        </div>
+        
+        <div class="input-group-prepend ml-2"><span class="input-group-text" id="countryId" translate>filter.country</span></div>
+        <select class="custom-select" aria-describedby="countryId" [(ngModel)]="countryId" (change)='onCountrySelect($event)'>
+            <option value="0" translate>filter.all
+            <option *ngFor="let country of countries" [value]=country.id>
+                {{country.nameBg}}
+            </option>
+        </select>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" id="operatorId" translate>filter.operator</span></div>
+        <select class="custom-select" aria-describedby="operatorId" [(ngModel)]="operatorId" [disabled]="countryId == 0">
+            <option value="0" translate>filter.all</option>
+            <option *ngFor="let operator of operators" [value]=operator.id>
+                {{operator.name}}
+            </option>
+        </select>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" id="regionId" translate>filter.region</span></div>
+        <select class="custom-select" aria-describedby="regionId" [(ngModel)]="regionId">
+            <option value="0" translate> filter.all
+                <option *ngFor="let region of regions" [value]=region.id>
+                    {{region.name}}
+                </option>
+        </select>
+
+        <div class="input-group-append ml-2">
+            <button class="btn btn-outline-success" type="button" (click)="filter()" translate>btn.search</button>
+            <button class="btn btn-outline-danger ml-2" type="button" (click)="clearFilters()" translate>btn.clear</button>
+            <button class="btn btn-outline-secondary ml-2" (click)="openExportDialog('pdf')" type="button"> <i class="fa fa-file-pdf-o"></i> </button>
+            <button class="btn btn-outline-secondary ml-2" (click)="openExportDialog('xlsx')" type="button"> <i class="fa fa-file-excel-o"></i> </button>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped w-100">
+        <thead>
+            <tr>
+                <th sortable="id" (sort)="onSort($event)" translate>report.roamingId</th>
+                <th sortable="user" (sort)="onSort($event)"  translate>report.userId</th>
+                <th sortable="eventTs" (sort)="onSort($event)" translate>report.eventTs</th>
+                <th sortable="country.nameBg" (sort)="onSort($event)" translate>report.countryName</th>
+                <th sortable="country.mcc" (sort)="onSort($event)" translate>report.mccCode</th>
+                <th sortable="operator.name" (sort)="onSort($event)" translate>report.operatorName</th>
+                <th sortable="operator.mnc" (sort)="onSort($event)" translate>report.mncCode</th>
+                <th translate>report.coordinates</th>
+                <th sortable="bgRegion" (sort)="onSort($event)" translate>filter.region</th>
+                <th sortable="os" (sort)="onSort($event)" translate>report.os</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of report">
+                <td>{{r.roamingId}}</td>
+                <td>{{r.userId}}</td>
+                <td>{{r.eventTs | date: formatTS}}</td>
+                <td>{{r.operator.country.nameBg}}</td>
+                <td>{{r.operator.country.mcc}}</td>
+                <td>{{r.operator.name}}</td>
+                <td>{{r.operator.mnc}}</td>
+                <td>{{r.latitude}}, {{r.longitude}}</td>
+                <td>{{r.region.name}}</td>
+                <td translate>{{'os.' + (r.os ? r.os : 'nodata')}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="paging-wrapper d-flex justify-content-between">
+        <select class="pagination-size custom-select" [(ngModel)]="sortingPaging.pageSize" (ngModelChange)="loadReport()">
+            <option *ngFor="let item of pageSizeOptions; let i = index" [value]="pageSizeOptions[i]">
+              {{pageSizeOptions[i]}} {{'paging.itemsPerPage' | translate}} 
+            </option>
+        </select>
+        <ngb-pagination class="pagination-control"
+            [(page)]="sortingPaging.pageNumber"
+            [pageSize]="sortingPaging.pageSize"
+            [collectionSize]="sortingPaging.totalElements"
+            [boundaryLinks]="true"
+            (pageChange)="pageChanged($event)">
+        </ngb-pagination>
+        <span class="pagination-index border center">
+            {{sortingPaging.fromRow}} - {{sortingPaging.toRow}} / {{sortingPaging.totalElements}}
+        </span>
+    </div>
+
+</div>
+
+  

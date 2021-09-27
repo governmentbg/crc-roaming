@@ -1,0 +1,106 @@
+<div class="d-flex flex-column h-100">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-blue px-1">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand mb-0 py-0 h3 d-none d-lg-block" routerLink="/" translate>
+                <img src="assets/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="Roaming Protect">&nbsp;
+                <span *ngIf="!loggedIn" translate>appName</span>
+                <span *ngIf="loggedIn">{{'appNameVersion' | translate: {version: appVersion} }}</span>
+            </a>
+            
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mr-auto" *ngIf="loggedIn">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle py-0" type="button" href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" translate>menu.nomenclatures</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nomenclaturesDD">
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewZones)" routerLink="/zones" translate>menu.zones</a>
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewCountries)" routerLink="/countries" translate>menu.countries</a>
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewOperators)" routerLink="/operators" translate>menu.operators</a>
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewRoles)" routerLink="/roles" translate>menu.roles</a>
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewUsers)" routerLink="/users" translate>menu.users</a>
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewTexts)" routerLink="/texts" translate>menu.texts</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown" *ngIf="perms.hasAccess(perms.all.viewReports)">
+                        <a class="nav-link dropdown-toggle py-0" type="button" href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" translate>menu.reports</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" routerLink="/report-registered-users" translate>menu.reports.registeredUsers</a>
+                            <li class="dropdown hoves dropdown-submenu"><a href="#" class="dropdown-item" data-toggle="dropdown" translate>menu.reports.reportedRoamings</a>
+								<ul class="dropdown-menu">
+                                    <a class="dropdown-item" routerLink="/reported-roamings" translate>menu.reports.reportedEvents</a>
+                                    <a class="dropdown-item" routerLink="/reported-roamings-chart" translate>menu.reports.reportedEventsPie</a>
+                                    <a class="dropdown-item" routerLink="/reported-roamings-line-chart" translate>menu.reports.reportedEventsLinear</a>
+                                    <a class="dropdown-item" routerLink="/reported-roamings-comparison-chart" translate>menu.reports.reportedEventsPeriods</a>
+								</ul>
+							</li>
+                            <li class="dropdown hoves dropdown-submenu"><a href="#" class="dropdown-item" data-toggle="dropdown" translate>menu.reports.reportedBlockings</a>
+								<ul class="dropdown-menu">
+                                    <a class="dropdown-item" routerLink="/reported-blockings-events" translate>menu.reports.blockingEvents</a>
+                                    <a class="dropdown-item" routerLink="/reported-blockings-distribution" translate>menu.reports.blockingEventsPie</a>
+                                    <a class="dropdown-item" routerLink="/reported-blockings-evolution" translate>menu.reports.blockingEventsLinear</a>
+                                    <a class="dropdown-item" routerLink="/reported-blockings-comparison" translate>menu.reports.blockingEventsPeriods</a>
+								</ul>
+							</li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown" *ngIf="perms.hasAccess(perms.all.viewReports)">
+                        <a class="nav-link dropdown-toggle py-0" type="button" href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" translate>menu.others</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.sendNotifications)" routerLink="/notifications" translate>menu.notifications</a>
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewJournal)" routerLink="/journal" translate>menu.journal</a>
+                            <a class="dropdown-item" *ngIf="perms.hasAccess(perms.all.viewJournal)" routerLink="/cancelled" translate>menu.cancelled</a>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav ml-auto" *ngIf="!loggedIn">
+                    <li class="nav-item"><a class="nav-link py-0" href="#" (click)="openDialog('login')" translate>menu.login</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle py-0" type="button" href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" translate>menu.publicUsers</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#" (click)="openDialog('mobileApps')" translate>menu.mobileApps</a>
+                            <a class="dropdown-item" routerLink="/privacy-policy" translate>menu.privacyPolicy</a>
+                            <a class="dropdown-item" href="#" (click)="openDialog('delProfile')" translate>menu.delProfile</a>
+                            <a class="dropdown-item" href="#" (click)="openDialog('about')" translate>menu.about</a>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav" *ngIf="loggedIn">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle py-0" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{'menu.greeting' | translate: {name: auth.fullName, role: auth.role} }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#" (click)="openDialog('changePass')" translate>menu.changePassword</a>
+                            <a class="dropdown-item" href="#" (click)="logout()" translate>menu.logout</a>
+                        </div>
+                    </li>
+                </ul>
+
+                 <!-- Language selector -->
+                 <ul class="navbar-nav" *ngIf="!loggedIn">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle py-0" type="button" href="#" id="langDropDown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" translate>
+                            <i class="fa fa-globe" aria-hidden="true"></i>&nbsp;menu.language
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="langDropDown">
+                            <a class="dropdown-item" href="#" (click)="ui.useLanguage('bg')" translate><img src="assets/flags/bg.svg" class="flag mr-1">menu.bg</a>
+                            <a class="dropdown-item" href="#" (click)="ui.useLanguage('en')" translate><img src="assets/flags/uk.svg" class="flag mr-1">menu.en</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="flex-fill">
+        <router-outlet></router-outlet>
+    </div>
+</div>

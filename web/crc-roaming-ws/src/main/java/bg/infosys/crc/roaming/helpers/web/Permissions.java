@@ -1,0 +1,27 @@
+package bg.infosys.crc.roaming.helpers.web;
+
+public interface Permissions {
+	String VIEW_USERS = "VIEW_USERS";
+	String EDIT_USERS = "EDIT_USERS";
+	
+	String VIEW_ROLES = "VIEW_ROLES";
+	String EDIT_ROLES = "EDIT_ROLES";
+	
+	String VIEW_OPERATORS = "VIEW_OPERATORS";
+	String EDIT_OPERATORS = "EDIT_OPERATORS";
+	
+	String VIEW_COUNTRIES = "VIEW_COUNTRIES";
+	String EDIT_COUNTRIES = "EDIT_COUNTRIES";
+	
+	String VIEW_ZONES = "VIEW_ZONES";
+	String EDIT_ZONES = "EDIT_ZONES";
+	
+	String VIEW_TEXTS = "VIEW_TEXTS";
+	String EDIT_TEXTS = "EDIT_TEXTS";
+	
+	String VIEW_REPORTS = "VIEW_REPORTS";
+	String VIEW_JOURNAL = "VIEW_JOURNAL";
+	
+	String SEND_NOTIFICATIONS = "SEND_NOTIFICATIONS";
+	
+}

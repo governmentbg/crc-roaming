@@ -1,0 +1,66 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+ 
+ 	<bean id="postgresDS" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    	<property name="driverClass"				value="org.postgresql.Driver" />
+  		<property name="jdbcUrl"					value="${reldb.jdbcUrl}" />
+		<property name="user"						value="${reldb.user}" />
+		<property name="password"					value="${reldb.password}" />
+	    <property name="minPoolSize"				value="${reldb.minPoolSize}" />
+	    <property name="maxPoolSize"				value="${reldb.maxPoolSize}" />
+	    <property name="initialPoolSize"			value="${reldb.initialPoolSize}" />
+	    <property name="maxStatements"				value="${reldb.maxStatements}" />
+	    <property name="idleConnectionTestPeriod"	value="${reldb.maxIdleTime}" />
+	    <property name="loginTimeout"				value="${reldb.maxIdleTime}" />
+  	</bean>
+  	
+  	<!-- Create default configuration for Hibernate -->
+	<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+
+	<!-- Configure the entity manager factory bean -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="postgresDS" />
+		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
+		
+		<!-- Set base package of your entities -->
+		<property name="packagesToScan">
+			<array>
+				<value>bg.infosys.crc.entities</value>
+			</array>
+		</property>
+		
+		<!-- Set share cache mode -->
+		<property name="sharedCacheMode" value="ENABLE_SELECTIVE"/>
+		
+		<!-- Set validation mode -->
+		<property name="validationMode" value="NONE"/>
+		
+		<property name="jpaProperties">
+			<props>
+			    <!-- Hibernate Configuration -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
+				<prop key="hibernate.show_sql">${reldb.showSql}</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+  				<prop key="hibernate.hbm2ddl.auto">validate</prop>
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+				<prop key="hibernate.ejb.use_class_enhancer">true</prop>
+				<prop key="javax.persistence.schema-generation.database.action">none</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Configure the transaction manager bean -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<!-- Enable annotation driven transaction management -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	
+	<!-- Configure Spring Data JPA and set the base package of the repository interfaces -->
+	<!-- <jpa:repositories base-package="foo.bar.repository"/> -->
+</beans>

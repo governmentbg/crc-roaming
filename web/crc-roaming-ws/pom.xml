@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>bg.infosys.crc</groupId>
+		<artifactId>crc-roaming</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>crc-roaming-ws</artifactId>
+	<packaging>war</packaging>
+	<name>crc-roaming-ws</name>
+
+	<dependencies>
+		<!-- DB Project Dependency -->
+		<dependency>
+			<groupId>bg.infosys.crc</groupId>
+			<artifactId>crc-roaming-db</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Infosys Common WS Dependency -->
+		<dependency>
+			<groupId>bg.infosys.common</groupId>
+			<artifactId>infosys-common-ws</artifactId>
+			<version>${v.infosys.common.ws}</version>
+		</dependency>
+
+		<!-- Javax Servlet Api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${v.javax.servlet}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Java Mail API -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>${v.mail}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>${v.mail}</version>
+		</dependency>
+
+		<!-- Google OAuth2 Dependency -->
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>${v.google.oauth}</version>
+		</dependency>
+
+		<!-- Google Firebase Dependency -->
+		<dependency>
+			<groupId>com.google.firebase</groupId>
+			<artifactId>firebase-admin</artifactId>
+			<version>${v.firebase}</version>
+		</dependency>
+
+		<!-- Jackson (JSON) Dependency -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${v.jackson}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jdk8</artifactId>
+			<version>${v.jackson}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>${v.jackson}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-parameter-names</artifactId>
+			<version>${v.jackson}</version>
+		</dependency>
+	</dependencies>
+
+</project>

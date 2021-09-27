@@ -1,0 +1,38 @@
+<div class="card border-primary h-100">
+    <div class="card-header bg-blue text-white p-2" translate>{{editMode ? 'operators.editTitle' : 'operators.addTitle'}}</div>
+    <mat-dialog-content>
+        <div class="card-body">
+            <form [formGroup]="addEditForm" (ngSubmit)="onSubmit()" class="d-flex flex-column h-100">
+                <div class="form-group">
+                    <label for="name" translate>operators.name</label>
+                    <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+                    <div class="invalid-feedback" *ngIf="form.name.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.name.errors?.maxlength" translate>errors.tooLong</div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="countryId" translate>filter.country</label>
+                    <select class="custom-select" formControlName="countryId" [ngClass]="{ 'is-invalid': submitted && form.countryId.errors }">
+                        <option *ngFor="let country of countries" [value]=country.id>
+                            {{country.nameBg}}
+                        </option>
+                    </select>
+                    <div class="invalid-feedback"translate>errors.required</div>
+                </div>
+              
+                <div class="form-group">
+                    <label for="mnc" translate>operators.mncCode</label>
+                    <input type="text" formControlName="mnc" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.mnc.errors }">
+                    <div class="invalid-feedback" *ngIf="form.mnc.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.mnc.errors?.maxlength" translate>errors.tooLong</div>
+                    <div class="invalid-feedback" *ngIf="form.mnc.errors?.pattern" translate>errors.onlyDigits</div>
+                </div>
+    
+                <div class="d-flex justify-content-end mt-auto">
+                    <button [disabled]="loading" class="btn btn-sm btn-primary mr-1" translate>btn.save</button>
+                    <button class="btn btn-sm btn-primary" mat-button [mat-dialog-close] translate>btn.close</button>
+                </div>
+            </form>
+        </div>
+    </mat-dialog-content>
+</div>

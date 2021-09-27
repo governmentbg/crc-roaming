@@ -1,0 +1,40 @@
+<div class="card border-primary h-100">
+    <div class="card-header bg-blue text-white p-2" translate>auth.loginTitle</div>
+
+    <mat-dialog-content>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="d-flex flex-column h-100">
+                <div class="form-group">
+                    <label for="email" translate>auth.email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.email.errors }" />
+                    <div class="invalid-feedback" *ngIf="form.email.errors?.required" translate>errors.required</div>
+                </div>
+                <div class="form-group">
+                    <label for="password" translate>auth.pass</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.password.errors }" />
+                    <div class="invalid-feedback" *ngIf="form.password.errors?.required" translate>errors.required</div>
+                </div>
+    
+                <div class="form-group">
+                    <div>
+                        <ngx-recaptcha2 #captchaElem 
+                            [siteKey]="siteKey"
+                            [hl]="ui.getCurrentLang()"
+                            formControlName="recaptcha"> 
+                        </ngx-recaptcha2>
+                    </div>
+                    <div class="text-danger small" *ngIf="submitted && form.recaptcha.errors?.required" translate>errors.required</div>
+                </div>
+    
+                <div class="d-flex justify-content-between mt-auto">
+                    <a class="text-danger my-auto mr-5" href="#" (click)="openForgottenPass()" mat-button [mat-dialog-close]="true" translate>auth.forgottenPassword</a>
+    
+                    <div>
+                        <button [disabled]="loading" class="btn btn-sm btn-primary mr-1" translate>btn.login</button>
+                        <button class="btn btn-sm btn-primary" mat-button [mat-dialog-close]="true" translate>btn.close</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-dialog-content>
+</div>

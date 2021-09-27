@@ -1,0 +1,37 @@
+<div class="card border-primary h-100">
+    <div class="card-header bg-blue text-white p-2" translate>journal.compareTitle</div>
+    <mat-dialog-content>
+        <div class="card-body">
+            <div class="row">
+                <span class="col">{{'journal.date' | translate}}: </span>
+                <span class="col">{{element?.ts | date: formatTS}}</span>
+            </div>
+            <div class="row">
+                <span class="col">{{'journal.editor' | translate}}: </span>
+                <span class="col">{{element?.editor.fullName}}</span>
+            </div>
+            <div class="row">
+                <span class="col">{{'journal.objType' | translate}}: </span>
+                <span class="col" translate>{{element?.objType}}</span>
+            </div>
+            <div class="row">
+                <span class="col">{{'journal.operationType' | translate}}: </span>
+                <span class="col" translate>{{element?.operationType}}</span>
+            </div>
+    
+            <br>
+            <div class="row">
+                <span class="col" translate>journal.initialState</span>
+                <span class="col" translate>journal.newState</span>
+            </div>
+            <div class="row">
+                <pre class="col">{{element?.initialState | json}}</pre>
+                <pre class="col">{{element?.newState | json}}</pre>
+            </div>
+        </div>
+    
+        <div class="d-flex justify-content-end mb-2 mr-2">
+            <button class="btn btn-sm btn-primary" mat-button [mat-dialog-close] translate>btn.close</button>
+        </div>
+    </mat-dialog-content>
+</div>

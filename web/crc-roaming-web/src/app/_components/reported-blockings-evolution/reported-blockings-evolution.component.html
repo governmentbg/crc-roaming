@@ -1,0 +1,68 @@
+<div class="container-fluid d-flex flex-column px-5 py-3 h-100">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>menu.reports.blockingEventsLinear</h3>
+    </div>
+
+    <div class="input-group mb-2">
+        <div class="input-group-prepend ml-2"><span class="input-group-text" translate>filter.fromMonth</span></div>
+        <select class="custom-select" aria-describedby="fromMonth" [(ngModel)]="fromMonth">
+            <option *ngFor="let m of months" [value]="m" translate>
+                {{'month.' + m}}
+            </option>
+        </select>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" translate>filter.fromYear</span></div>
+        <select class="custom-select" aria-describedby="fromYear" [(ngModel)]="fromYear">
+            <option *ngFor="let y of years" [value]="y" translate>
+                {{y}}
+            </option>
+        </select>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" translate>filter.toMonth</span></div>
+        <select class="custom-select" aria-describedby="toMonth" [(ngModel)]="toMonth">
+            <option *ngFor="let m of months" [value]="m" translate>
+                {{'month.' + m}}
+            </option>
+        </select>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" translate>filter.toYear</span></div>
+        <select class="custom-select" aria-describedby="toYear" [(ngModel)]="toYear">
+            <option *ngFor="let y of years" [value]="y" translate>
+                {{y}}
+            </option>
+        </select>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" translate>filter.country</span></div>
+        <select class="custom-select" name="countryId" [(ngModel)]="countryId" (change)='onCountrySelect($event)'>
+            <option value="0" translate> filter.all
+            <option *ngFor="let country of countries" [value]=country.id>
+                {{country.nameBg}}
+            </option>
+        </select>
+
+        <div class="input-group-prepend ml-2"><span class="input-group-text" translate>filter.operator</span></div>
+        <select class="custom-select" name="operatorId" [(ngModel)]="operatorId" [disabled]="disableOperator">
+            <option value="0" translate>filter.all</option>
+            <option *ngFor="let operator of operators" [value]=operator.id>
+                {{operator.name}}
+            </option>
+        </select>
+
+        <div class="input-group-append ml-2">
+            <button class="btn btn-outline-success" (click)="filter()" translate>button.search</button>
+            <button class="btn btn-outline-danger ml-2" (click)="clearFilters()" translate>button.clearFilter</button>
+            <button class="btn btn-outline-secondary ml-2" (click)="exportChart()" type="button"> <i class="fa fa-file-pdf-o"></i> </button>
+        </div>
+    </div>
+
+    <div class="pt-5 h-100">
+        <canvas baseChart height="100%" id="reportedBlockingsLineChart"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [colors]="lineChartColors"
+            [options]="lineChartOptions"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType">
+        </canvas>
+    </div>
+</div>

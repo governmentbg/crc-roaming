@@ -1,0 +1,52 @@
+<div class="container-fluid py-3">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>notif.title</h3>
+        <button class="btn btn-success" (click)="openAdd()" translate>notif.btnNewNotif</button>
+    </div>
+    <table class="table table-bordered table-striped w-100">
+        <thead>
+            <tr>
+                <th translate>createdAt</th>
+                <th translate>sentAt</th>
+                <th translate>sent</th>
+                <th translate>notif.subject</th>
+                <th translate>notif.body</th>
+                <th translate>createdBy</th>
+                <th class="text-center" translate>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of notificationList">
+                <td>{{n.createdAt | date: formatTS}}</td>
+                <td>{{n.sentAt | date: formatTS}}</td>
+                <td [ngClass]="n.sent ? 'text-success' : 'text-danger'" translate>{{n.sent ? 'Yes' : 'No'}}</td>
+                <td>{{n.subject}}</td>
+                <td>{{n.body}}</td>
+                <td>{{n.createdBy?.fullName}}</td>
+                <td class="text-center align-middle py-2">
+                    <button class="btn btn-sm btn-danger text-nowrap" (click)="send(n)" [disabled]="n.sent" translate>notif.send</button>
+                    <button class="btn btn-sm btn-success text-nowrap ml-2" (click)="openAdd(n)" translate>notif.btnAsNew</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="paging-wrapper d-flex justify-content-between">
+        <select class="pagination-size custom-select" [(ngModel)]="sortingPaging.pageSize" (ngModelChange)="loadNotifications()">
+            <option *ngFor="let item of pageSizeOptions; let i = index" [value]="pageSizeOptions[i]">
+              {{pageSizeOptions[i]}} {{'paging.itemsPerPage' | translate}} 
+            </option>
+        </select>
+        <ngb-pagination class="pagination-control"
+            [(page)]="sortingPaging.pageNumber"
+            [pageSize]="sortingPaging.pageSize"
+            [collectionSize]="sortingPaging.totalElements"
+            [boundaryLinks]="true"
+            (pageChange)="pageChanged($event)">
+        </ngb-pagination>
+        <span class="pagination-index border center">
+            {{sortingPaging.fromRow}} - {{sortingPaging.toRow}} / {{sortingPaging.totalElements}}
+        </span>
+    </div>
+
+</div>

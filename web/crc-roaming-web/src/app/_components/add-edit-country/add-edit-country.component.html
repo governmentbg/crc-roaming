@@ -1,0 +1,56 @@
+<div class="card border-primary h-100">
+    <div class="card-header bg-blue text-white p-2" translate>{{editMode ? 'countries.editTitle' : 'countries.addTitle'}}</div>
+    <mat-dialog-content>
+        <div class="card-body">
+            <form [formGroup]="addEditForm" (ngSubmit)="onSubmit()" class="d-flex flex-column h-100">
+                <div class="form-group">
+                    <label for="nameInt" translate>countries.intName</label>
+                    <input type="text" formControlName="nameInt" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.nameInt.errors }">
+                    <div class="invalid-feedback" *ngIf="form.nameInt.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.nameInt.errors?.maxlength" translate>errors.tooLong</div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="nameBg" translate>countries.bgName</label>
+                    <input type="text" formControlName="nameBg" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.nameBg.errors }">
+                    <div class="invalid-feedback" *ngIf="form.nameBg.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.nameBg.errors?.maxlength" translate>errors.tooLong</div>
+                </div>
+              
+                <div class="form-group">
+                    <label for="mcc" translate>countries.mccCode</label>
+                    <input type="text" formControlName="mcc" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.mcc.errors }">
+                    <div class="invalid-feedback" *ngIf="form.mcc.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.mcc.errors?.maxlength" translate>errors.tooLong</div>
+                    <div class="invalid-feedback" *ngIf="form.mcc.errors?.pattern"translate>errors.invalid</div>
+                </div>
+              
+                <div class="form-group">
+                    <label for="phoneCode" translate>countries.phoneCode</label>
+                    <input type="text" formControlName="phoneCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.phoneCode.errors }">
+                    <div class="invalid-feedback" *ngIf="form.phoneCode.errors?.required" translate>errors.required</div>
+                    <div class="invalid-feedback" *ngIf="form.phoneCode.errors?.maxlength" translate>errors.tooLong</div>
+                    <div class="invalid-feedback" *ngIf="form.phoneCode.errors?.pattern"translate>errors.invalid</div>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="euMember" translate>countries.euMember</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="euMember" name="euMember" [value]="true" [ngClass]="{ 'is-invalid': submitted && form.euMember.errors }">
+                        <label class="form-check-label" for="euMember" translate>Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="euMember" name="euMember" [value]="false" [ngClass]="{ 'is-invalid': submitted && form.euMember.errors }">
+                        <label class="form-check-label" for="euMember" translate>No</label>   
+                        <div class="invalid-feedback" translate>errors.required</div>
+                    </div>
+                </div>
+    
+                <div class="d-flex justify-content-end mt-auto">
+                    <button [disabled]="loading" class="btn btn-sm btn-primary mr-1" translate>btn.save</button>
+                    <button class="btn btn-sm btn-primary" mat-button [mat-dialog-close] translate>btn.close</button>
+                </div>
+            </form>
+        </div>
+    </mat-dialog-content>
+</div>

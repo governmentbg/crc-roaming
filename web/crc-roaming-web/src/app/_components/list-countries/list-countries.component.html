@@ -1,0 +1,40 @@
+<div class="container-fluid py-3">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>countries.title</h3>
+        <button class="btn btn-success" (click)="add()" *ngIf="editPerm" translate>countries.btnNewCountry</button>
+    </div>
+    <table class="table table-bordered table-striped w-100">
+        <thead>
+            <tr>
+                <th sortable="bgName"    (sort)="onSort($event)" translate>countries.bgName</th>
+                <th sortable="intName"   (sort)="onSort($event)" translate>countries.intName</th>
+                <th sortable="mcc"       (sort)="onSort($event)" translate>countries.mccCode</th>
+                <th sortable="phoneCode" (sort)="onSort($event)" translate>countries.phoneCode</th>
+                <th sortable="euMember"  (sort)="onSort($event)" translate>countries.euMember</th>
+                <th sortable="createdBy" (sort)="onSort($event)" translate>createdBy</th>
+                <th sortable="createdAt" (sort)="onSort($event)" translate>createdAt</th>
+                <th sortable="updatedBy" (sort)="onSort($event)" translate>updatedBy</th>
+                <th sortable="updatedAt" (sort)="onSort($event)" translate>updatedAt</th>
+                <th class="text-center" *ngIf="editPerm" translate>actions</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let c of countries">
+                <td>{{c.nameBg}}</td>
+                <td>{{c.nameInt}}</td>
+                <td>{{c.mcc}}</td>
+                <td>{{c.phoneCode}}</td>
+                <td [ngClass]="c.euMember ? 'text-success' : 'text-danger'" translate>{{c.euMember ? "Yes" : "No"}}</td>
+                <td>{{c.createdBy?.fullName}}</td>
+                <td>{{c.createdAt | date: formatTS}}</td>
+                <td>{{c.updatedBy?.fullName}}</td>
+                <td>{{c.updatedAt | date: formatTS}}</td>
+                <td class="text-center py-2" *ngIf="editPerm">
+                    <button class="btn btn-sm btn-success" (click)="edit(c)" translate>btn.edit</button>
+                    <button class="btn btn-sm btn-danger ml-2" (click)="delete(c)" translate>btn.delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

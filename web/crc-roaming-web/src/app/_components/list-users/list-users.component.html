@@ -1,0 +1,56 @@
+<div class="container-fluid py-3">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>users.title</h3>
+        <button class="btn btn-success" (click)="add()" *ngIf="editPerm" translate>users.btnNewUser</button>
+    </div>
+
+    <table class="table table-bordered table-striped w-100">
+        <thead>
+            <tr>
+                <th translate>users.fullName</th>
+                <th translate>users.email</th>
+                <th translate>users.enabled</th>
+                <th translate>users.role</th>
+                <th translate>createdBy</th>
+                <th translate>createdAt</th>
+                <th translate>updatedBy</th>
+                <th translate>updatedAt</th>
+                <th class="text-center" *ngIf="editPerm" translate>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of users">
+                <td>{{item.fullName}}</td>
+                <td>{{item.email}}</td>
+                <td [ngClass]="item.enabled ? 'text-success' : 'text-danger'" translate>{{item.enabled ? "Yes" : "No"}}</td>
+                <td>{{item.role ? item.role.name + " (" + item.role.description + ")" : ""}}</td>
+                <td>{{item.createdBy?.fullName}}</td>
+                <td>{{item.createdAt | date: formatTS}}</td>
+                <td>{{item.updatedBy?.fullName}}</td>
+                <td>{{item.updatedAt | date: formatTS}}</td>
+                <td class="text-center py-2" *ngIf="editPerm">
+                    <button class="btn btn-sm btn-success" (click)="edit(item)" translate>btn.edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="paging-wrapper d-flex justify-content-between">
+        <select class="pagination-size custom-select" [(ngModel)]="sortingPaging.pageSize" (ngModelChange)="loadUsers()">
+            <option *ngFor="let item of pageSizeOptions; let i = index" [value]="pageSizeOptions[i]">
+              {{pageSizeOptions[i]}} {{'paging.itemsPerPage' | translate}} 
+            </option>
+        </select>
+        <ngb-pagination class="pagination-control"
+            [(page)]="sortingPaging.pageNumber"
+            [pageSize]="sortingPaging.pageSize"
+            [collectionSize]="sortingPaging.totalElements"
+            [boundaryLinks]="true"
+            (pageChange)="pageChanged($event)">
+        </ngb-pagination>
+        <span class="pagination-index border center">
+            {{sortingPaging.fromRow}} - {{sortingPaging.toRow}} / {{sortingPaging.totalElements}}
+        </span>
+    </div>
+
+</div>

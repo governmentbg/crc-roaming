@@ -1,0 +1,93 @@
+<div class="d-flex flex-column h-100">
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend"><span class="input-group-text" translate>map.filterTitle</span></div>
+
+        <div class="input-group-prepend"><span class="input-group-text" translate>fromDate</span></div>
+        <input class="form-control" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker" (ngModelChange)="onFilterChange()">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button"> <i class="fa fa-calendar"></i> </button>
+        </div>
+        &nbsp;
+
+        <div class="input-group-prepend"><span class="input-group-text" translate>toDate</span></div>
+        <input class="form-control" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker" (ngModelChange)="onFilterChange()">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button"> <i class="fa fa-calendar"></i> </button>
+        </div>
+        &nbsp;
+
+        <div class="input-group-prepend"><span class="input-group-text" translate>map.countryFilter</span></div>
+        <select class="custom-select" [(ngModel)]="selectedCountry" (change)="onFilterChange()">
+            <option value="0" translate>filter.all</option>
+            <option *ngFor="let country of countries" [value]=country.id>
+                {{translate.currentLang == null || translate.currentLang == 'bg' ? country.nameBg : country.nameInt}}
+            </option>
+        </select>
+        &nbsp;
+
+        <div class="input-group-prepend"><span class="input-group-text" translate>map.operatorFilter</span></div>
+        <select class="custom-select selectsearch" [(ngModel)]="selectedOperator" [disabled]="disableOperator" (change)="onFilterChange()">
+            <option data value="0" translate>filter.all</option>
+            <option *ngFor="let operator of operators" [value]=operator.id>
+                {{operator.name}}
+            </option>
+        </select>
+        &nbsp;
+
+        <div class="input-group-prepend"><span class="input-group-text" translate>map.regionFilter</span></div>
+        <select class="custom-select" [(ngModel)]="selectedRegion" (change)="onFilterChange()">
+            <option value="0" translate>filter.all</option>
+            <option *ngFor="let region of regions" [value]=region.id>
+                {{translate.currentLang == null || translate.currentLang == 'bg' ? region.name : region.intName}}
+            </option>
+        </select>
+    </div>
+
+    <div class="d-flex flex-row h-100">
+        <div *ngIf="managePolygonsPage">
+            <div class="px-2 my-2 text-center" *ngIf="editPerm">
+                <button class="btn btn-sm btn-success"      (click)="newPolygon()"
+                    [disabled]="addEditPolygonMode"translate>btn.addPolygon</button>
+
+                <button class="btn btn-sm btn-success mx-2" (click)="deleteLastVertex()"
+                    [disabled]="!addEditPolygonMode || preEditPolygon || polygonInEditMode?.coordinates" translate>btn.deleteLastVertex</button>
+
+                <button class="btn btn-sm btn-success"      (click)="cancelAddEdit()"
+                    [disabled]="!addEditPolygonMode" translate>btn.cancel</button>
+            </div>
+            <table class="table table-bordered table-striped w-100">
+                <thead>
+                    <tr>
+                        <th translate>zones.name</th>
+                        <th class="text-center" *ngIf="editPerm">
+                            <span translate>actions</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of polygonList" (mouseover)="mouseOver(p)" (mouseout)="mouseOut(p)">
+                        <td *ngIf="!addEditPolygonMode || polygonInEditMode != p" (click)="zoomTo(p)">{{p.name}}</td>
+                        <td *ngIf="addEditPolygonMode && polygonInEditMode == p" class="px-0 py-2">
+                            <form [formGroup]="addEditForm" (ngSubmit)="savePolygon()" class="d-flex flex-column h-100">
+                                <div class="form-group input-group-sm m-0 p-0">
+                                    <input type="text" formControlName="name" class="form-control m-0 p-0" [ngClass]="{ 'is-invalid': submitted && form.name.errors }">
+                                    <div class="invalid-feedback" *ngIf="form.name.errors?.required" translate>errors.required</div>
+                                    <div class="invalid-feedback" *ngIf="form.name.errors?.maxlength" translate>errors.tooLong</div>
+                                </div>
+                            </form>
+                        </td>
+                        <td class="text-center py-2" *ngIf="editPerm">
+                            <button class="btn btn-sm btn-success px-1" (click)="editPolygon(p)" [disabled]="addEditPolygonMode" [hidden]="addEditPolygonMode && polygonInEditMode == p" translate>btn.edit</button>
+                            <button class="btn btn-sm btn-danger  px-1 ml-1" (click)="deletePolygon(p)" [disabled]="addEditPolygonMode" [hidden]="addEditPolygonMode && polygonInEditMode == p" translate>btn.delete</button>
+
+                            <button class="btn btn-sm btn-success px-1" (click)="savePolygon()" [disabled]="!polygonInEditMode?.coordinates || loading" [hidden]="polygonInEditMode != p" translate>btn.save</button>
+                            <button class="btn btn-sm btn-danger  px-1 ml-1" (click)="cancelAddEdit()" [hidden]="polygonInEditMode != p" translate>btn.cancel</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="map_{{mapId}}" class="flex-fill"></div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid py-3">
+    <div class="d-flex justify-content-between pb-2">
+        <h3 class="text-blue" translate>operators.title</h3>
+        <button class="btn btn-success" (click)="add()" *ngIf="editPerm" translate>operators.btnNewOperator</button>
+    </div>
+    <table class="table table-bordered table-striped w-100">
+        <thead>
+            <tr>
+                <th sortable="opName"    (sort)="onSort($event)"    translate>operators.name</th>
+                <th sortable="cnName"    (sort)="onSort($event)"    translate>operators.country</th>
+                <th sortable="euMember"  (sort)="onSort($event)"    translate>countries.euMember</th>
+                <th sortable="mnc"       (sort)="onSort($event)"    translate>operators.mncCode</th>
+                <th sortable="mcc"       (sort)="onSort($event)"    translate>operators.mccCode</th>
+                <th sortable="createdBy" (sort)="onSort($event)"    translate>createdBy</th>
+                <th sortable="createdAt" (sort)="onSort($event)"    translate>createdAt</th>
+                <th sortable="updatedBy" (sort)="onSort($event)"    translate>updatedBy</th>
+                <th sortable="updatedAt" (sort)="onSort($event)"    translate>updatedAt</th>
+                <th class="text-center" *ngIf="editPerm"            translate>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of operators">
+                <td>{{o.name}}</td>
+                <td>{{o.country.nameBg}}</td>
+                <td [ngClass]="o.country.euMember ? 'text-success' : 'text-danger'" translate>{{o.country.euMember ? "Yes" : "No"}}</td>
+                <td>{{o.mnc}}</td>
+                <td>{{o.country.mcc}}</td>
+                <td>{{o.createdBy?.fullName}}</td>
+                <td>{{o.createdAt | date: formatTS}}</td>
+                <td>{{o.updatedBy?.fullName}}</td>
+                <td>{{o.updatedAt | date: formatTS}}</td>
+                <td class="text-center py-2" *ngIf="editPerm">
+                    <button class="btn btn-sm btn-success" (click)="edit(o)" translate>btn.edit</button>
+                    <button class="btn btn-sm btn-danger ml-2" (click)="delete(o)" translate>btn.delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
