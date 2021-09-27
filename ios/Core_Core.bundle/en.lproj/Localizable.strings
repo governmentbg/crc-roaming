@@ -1,0 +1,72 @@
+// App
+"permissions.notifications" = "A permission to send you notifications is required to alert you when you are within a zone with a possibility of roaming.";
+"permissions.location" = "Your location will be used only to determine wether you are within a zone with a possibility of roaming.";
+
+// Alerts
+"alert.logout.title" = "Logout?";
+"alert.logout.message" = "";
+"alert.logout.confirm" = "Logout";
+
+"alert.password_reset.title" = "Success";
+"alert.password_reset.message" = "Check your email inbox.";
+
+"alert.already_registered.title" = "User already registered";
+"alert.already_registered.message" = "You can login using your email address.";
+
+"alert.unauthorized.title" = "Your login has expired";
+"alert.unauthorized.message" = "Please login again to use the app";
+"alert.unauthorized.button" = "Log in";
+
+"alert.successful_registration.title" = "Successful Registration";
+"alert.successful_registration.message" = "Please confirm your account by tapping the link in your email.";
+
+"alert.generic_error.title" = "Error";
+"alert.generic_error.message" = "Something went wrong.";
+
+"alert.dismiss" = "Dismiss";
+
+// Login
+"login.email" = "Login with Email";
+"login.email_field" = "Email";
+"login.password_field" = "Password";
+"login.repeat_password_field" = "Repeat Password";
+"login.email.forgotten_password_button" = "Forgotten Password";
+"login.forgotten_password.button" = "Send";
+"login.email.login_button" = "Login";
+"login.facebook" = "Continue with Facebook";
+"login.google" = "Continue with Google";
+"login.register" = "Register";
+"login.register.button" = "Submit";
+
+
+// Home
+"home.tab_title" = "Protect";
+
+"home.roaming_notifications" = "Roaming Notifications";
+"home.roaming_notifications.subtitle.on" = "You will be notified when you are within a roaming zone.";
+"home.roaming_notifications.subtitle.off" = "You won't be notified when you are within a roaming zone. Tap the toggle to enable.";
+
+"home.required_actions" = "Actions Required";
+"home.allow_location" = "Allow Location Services";
+"home.allow_location.explanation" = "Your locations will be used only to determine wether you are within a zone with a possibility of roaming.";
+"home.allow_notifications" = "Allow Notifications";
+"home.allow_notifications.explanation" = "A permission to send you notifications is required for the feature to be fully functional.";
+
+"home.unintentional_roaming.title" = "Unintentional roaming";
+"home.unintentional_roaming.content" = "It is possible that when you are a customer of a Bulgarian mobile operator and you are in a border area, you have connected to a foreign network and you are roaming. You need to be careful when you are in border areas to avoid involuntary roaming.";
+
+// History
+"history.tab_title" = "History";
+"history.empty_state" = "No history available.";
+"history.date" = "Date";
+"history.coordinates" = "GPS Coordinates";
+"history.network" = "Network";
+
+// Countries
+"countries.tab_title" = "Countries";
+"countries.empty_state" = "No countries list available.";
+"countries.carrier" = "Carrier";
+
+// Notifications
+"roaming_notification.title" = "Entered a roaming zone";
+"roaming_notification.subtitle" = "Be aware that you might get connected to a foreign carrier.";

@@ -1,0 +1,72 @@
+// App
+"permissions.notifications" = "Позволение за изпращане на известия е нужно, за да ви уведомим, когато сте в регион с опасност от нежелан роуминг.";
+"permissions.location" = "Текущото ви местоположение ще бъде използвано само да се прецени дали сте в регион с опасност от нежелан роуминг.";
+
+// Alerts
+"alert.logout.title" = "Излизане от акаунт?";
+"alert.logout.message" = "";
+"alert.logout.confirm" = "Излез";
+
+"alert.password_reset.title" = "Успешно";
+"alert.password_reset.message" = "Инструкции бяха пратени на дадения имейл.";
+
+"alert.already_registered.title" = "Потребителят вече съществува";
+"alert.already_registered.message" = "Можете да влезнете използвайки имейл адреса си.";
+
+"alert.unauthorized.title" = "Сесията е изтекла";
+"alert.unauthorized.message" = "Моля, влезте отново.";
+"alert.unauthorized.button" = "Влез";
+
+"alert.successful_registration.title" = "Успешна регистрация";
+"alert.successful_registration.message" = "Моля, потвърдете акаунта си, като натиснете линка в имейла ви.";
+
+"alert.generic_error.title" = "Грешка";
+"alert.generic_error.message" = "Нещо се обърка.";
+
+"alert.dismiss" = "Добре";
+
+// Login
+"login.email" = "Вход с Имейл";
+"login.email_field" = "Имейл";
+"login.password_field" = "Парола";
+"login.repeat_password_field" = "Повтори парола";
+"login.email.forgotten_password_button" = "Забравена Парола";
+"login.forgotten_password.button" = "Изпрати";
+"login.email.login_button" = "Влез";
+"login.facebook" = "Продължи с Facebook";
+"login.google" = "Продължи с Google";
+"login.register" = "Регистрация";
+"login.register.button" = "Изпрати";
+
+
+// Home
+"home.tab_title" = "Защита";
+
+"home.roaming_notifications" = "Роуминг Известия";
+"home.roaming_notifications.subtitle.on" = "Ще бъдете известени, когато сте в зона с опасност от нежелан роуминг.";
+"home.roaming_notifications.subtitle.off" = "Няма да бъдете известени, когато сте в зона с опасност от нежелан роуминг.";
+
+"home.required_actions" = "Нужни действия";
+"home.allow_location" = "Позволи достъп до местоположение";
+"home.allow_location.explanation" = "Текущото ви местоположение ще бъде използвано само да се прецени дали сте в регион с опасност от нежелан роуминг.";
+"home.allow_notifications" = "Позволи известия";
+"home.allow_notifications.explanation" = "Нужно е позволение, за да можем да ви изпращаме известия.";
+
+"home.unintentional_roaming.title" = "Нежелан роуминг";
+"home.unintentional_roaming.content" = "Възможно е, когато клиент на български мобилен оператор се намира в граничен район, да реализира несъзнателно потребление на международен роуминг. Включително, възможно е малко преди достигането и след преминаване на границата с България клиентът все още да е регистриран в мрежата на чужд оператор. Следва да бъдете внимателни, когато се намирате в гранични райони, с цел да избегнете несъзнателен роуминг.";
+
+// History
+"history.tab_title" = "История";
+"history.empty_state" = "Списъкът е празен.";
+"history.date" = "Дата";
+"history.coordinates" = "GPS Координати";
+"history.network" = "Мрежа";
+
+// Countries
+"countries.tab_title" = "Държави";
+"countries.empty_state" = "Списъкът е празен.";
+"countries.carrier" = "Оператор";
+
+// Notifications
+"roaming_notification.title" = "Навлязохте в роуминг зона";
+"roaming_notification.subtitle" = "Възможно е да се свържете с чужд оператор.";
