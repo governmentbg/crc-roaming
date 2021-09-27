@@ -1,0 +1,158 @@
+<resources>
+
+    <string name="app_name" translatable="false">Roaming Protect</string>
+    <string name="roaming_protect" translatable="false">Roaming\nProtect</string>
+    <string name="roaming_protect_without_new_line" translatable="false">Roaming Protect</string>
+
+    <string name="attention">Attention</string>
+    <string name="permission_usage_text">This app collects and sends location data also the app is not in use to CRC servers for statistical purposes and helps to identify areas with an increased risk of unwanted roaming. All data that is sent is anonymous and cannot be linked to a specific device or user.</string>
+
+    <!-- Titles -->
+    <string name="title_login">Login</string>
+    <string name="title_registration">Registration</string>
+    <string name="title_home">Home</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_telecoms">List of Telecoms</string>
+    <string name="title_history">History</string>
+    <string name="title_change_password">Change password</string>
+
+    <string name="nav_home">Protect</string>
+    <string name="nav_telecoms">Countries</string>
+    <string name="nav_history">History</string>
+
+    <string name="bulgarian_sim_required">Wrong SIM card</string>
+    <string name="bulgarian_sim_required_message">Roaming Protect requires bulgarian SIM card to work</string>
+
+    <string name="new_registration">New Registration</string>
+    <string name="login">Login</string>
+    <string name="login_field">Login</string>
+    <string name="login_title">New Login</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="privacy_policy_link">Privacy Policy</string>
+    <string name="policy_check_text">I have read and agree to the <a href="https://roaming.crc.bg/privacy-policy?lang=en">Privacy Policy</a></string>
+    <string name="accept_privacy_policy_text">You have to agree to the Privacy Policy!</string>
+    <string name="change_password">Change password</string>
+    <string name="confirm">Confirm</string>
+    <string name="old_password">Old password</string>
+    <string name="new_password">New password</string>
+    <string name="go_to_settings">Go to settings</string>
+    <string name="password_change_success">Password changed successfully!</string>
+    <string name="wrong_password">Wrong password!</string>
+    <string name="email_registration">Mail Registration</string>
+    <string name="facebook_registration">Facebook Registration</string>
+    <string name="google_registration">Google Registration</string>
+
+    <string name="new_login">New Login</string>
+    <string name="email_login">Mail Login</string>
+    <string name="facebook_login">Facebook Login</string>
+    <string name="google_login">Google Login</string>
+    <string name="register">Register</string>
+
+    <string name="forgot_password">Forgotten password</string>
+    <string name="txt_forgotten_password_description">Enter your registration email and you will receive a link to enter your new password</string>
+    <string name="reset">Reset</string>
+    <string name="forgotten_password_send">Send</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="list_of_telecom">List of telecoms</string>
+    <string name="history">History</string>
+    <string name="logout">Logout</string>
+    <string name="menu">Menu</string>
+    <string name="list_of_telecom_choose">List of telecom to choose from</string>
+    <string name="mobile_data">Mobile data</string>
+    <string name="data_roaming">Roaming data</string>
+    <string name="notification">Notification</string>
+    <string name="unintentional_roaming">Unintentional roaming</string>
+    <string name="unintentional_roaming_text">It is possible that when you are a customer of a Bulgarian mobile operator and you are in a border area, you have connected to a foreign network and you are roaming. You need to be careful when you are in border areas to avoid involuntary roaming.</string>
+    <string name="more">More</string>
+    <string name="telecom">Telecom</string>
+    <string name="code">MCC + MNC code</string>
+    <string name="code_short">MCC/MNC</string>
+
+    <string name="internet_connection">Internet connection!</string>
+    <string name="internet_not_connection">Please check the internet connection and try again.</string>
+    <string name="telecom_no_internet">Could not load the list of telecoms due to no internet connection!</string>
+    <string name="telecom_no_update">Could not update the list of telecoms due to no internet connection!</string>
+    <string name="history_no_internet">Could not load the history due to no internet connection!</string>
+    <string name="internet_connection_check">Internet connection is not available.</string>
+    <string name="txt_retry">Try again</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_done">Done</string>
+    <string name="txt_settings_charge_avoid">In order to avoid extra charges because of unwanted roaming, you should turn off access to mobile and roaming data</string>
+    <string name="miui_warning">Your device OS does not allow us to read the data roaming settings. Please use your device settings.</string>
+
+    <string name="notification_text">We will show you a notification when there is an attempt to connect to involuntary roaming.</string>
+    <string name="error_password_not_match">The passwords don\'t match.</string>
+    <string name="error_password_required">The password is required.</string>
+    <string name="error_email_required">Email is required.</string>
+    <string name="error_invalid_email">Email is not valid!</string>
+    <string name="error_repeat_password_required">Please repeat password. It is required!</string>
+    <string name="error_password_length_pre">Minimal password length</string>
+    <string name="error_password_length_post">symbols</string>
+    <string name="you_are_login_with">You\'re logged in with</string>
+    <string name="you_are_register_with">You\'re registered with</string>
+    <string name="you_are_not_register">You\'re not registered with this email!</string>
+    <string name="check_password">Check password!</string>
+    <string name="done">Done</string>
+    <string name="ok">OK</string>
+
+    <string name="back_again">Click "Back" for exit</string>
+
+    <string name="list_of_telecoms_subtitle">Please select the operators, for which you will be notified upon unintentional roaming</string>
+    <string name="macedonia_prefix">North Macedonia</string>
+    <string name="serbia_prefix">Serbia</string>
+    <string name="turkey_prefix">Turkey</string>
+    <string name="romania_prefix">Romania</string>
+    <string name="greece_prefix">Greece</string>
+
+    <string name="dismiss">Dismiss</string>
+
+    <string name="roaming_sticky_notification">We track your location to alert you to roaming.</string>
+
+    <string name="roaming_notification">There is an attempt to connect to a network while roaming!</string>
+    <string name="permission">Permission</string>
+    <string name="permission_message">Access to the location is required.</string>
+    <string name="try_again">Try again</string>
+    <string name="wrong_credentials_description">Login data is wrong. Fill in the correct ones.</string>
+    <string name="wrong_credentials">Wrong login data</string>
+
+    <!--Error  messages-->
+    <string name="email_sending_fail">Unable to send email</string>
+    <string name="already_login">The user is already logged in with this device</string>
+    <string name="unauthorized_user">The user is not authorized</string>
+    <string name="server_error">Problem during server communication</string>
+    <string name="error">Error</string>
+    <string name="your_session_is_expired">The session has expired or you are not logged in.</string>
+    <string name="go_to_login">Go to login</string>
+    <string name="go_to_registration">Go to registration</string>
+    <string name="email_already_registered">This email is already registered.</string>
+
+    <string name="failed_google_login">Problem with Google login</string>
+    <string name="failed_google_registration">Problem with Google registration</string>
+    <string name="failed_facebook_login">Problems with Facebook login</string>
+    <string name="failed_facebook_registration">Problem with Facebook registration</string>
+
+    <string name="roaming_alert_title">Roaming alert</string>
+    <string name="roaming_alert_message">You are currently connected to</string>
+    <string name="gps_alert_title">GPS has been disabled</string>
+    <string name="gps_alert_message">Roaming Protect requires GPS to be enabled to work properly!</string>
+    <string name="notification_alert_message">Your notifications are disabled!</string>
+    <string name="txt_want_to_logout">Are you sure you want to logout?</string>
+    <string name="cancel">Cancel</string>
+    <string name="history_descr">Connections to roaming networks from your telecoms list</string>
+    <string name="time_stamp">Timestamp</string>
+    <string name="date">Date</string>
+
+    <string name="gps_coordinates">GPS Coordinates</string>
+    <string name="network">Network</string>
+    <string name="no_data_found">There is no history</string>
+    <string name="warning_roaming_zone_title">Warning, roaming area</string>
+    <string name="warning_roaming_zone_subtitle">The device is in an area where roaming is possible.</string>
+    <string name="registered_successfully"> You have registered successfully. Please confirm your registration with the link you will receive on the given email.</string>
+    <string name="password_reset_successfully">The new password has been sent to the mail.</string>
+
+</resources>

@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services' // Google Services Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\Anatoliy\\Documents\\Android\\keys\\crc-roaming.jks')
+            storePassword 'crc-roaming2021'
+            keyPassword 'crc-roaming2021'
+            keyAlias 'crc-roaming'
+        }
+    }
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    dataBinding.enabled true
+
+    defaultConfig {
+        versionCode 125
+        versionName "2.11"
+        applicationId "bg.crc.roamingapp"
+        minSdkVersion 27 // 24
+        targetSdkVersion 30
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        disable 'RestrictedApi'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        'release-debug' {
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def buildType = variant.name
+            def versionCode = defaultConfig.versionCode
+            def formattedDate = new Date().format('yyyy_MM_dd')
+            outputFileName = "RoamingApp" + "_v" + versionCode + "_" + buildType + "_" + formattedDate + ".apk"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+//    implementation 'com.google.firebase:firebase-analytics:17.6.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation "android.arch.lifecycle:runtime:1.1.1"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    //ktx
+    //implementation 'androidx.activity:activity-ktx:1.1.0'
+    implementation 'androidx.core:core-ktx:1.3.2'
+
+    //recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+
+    //material design
+    implementation 'com.google.android.material:material:1.3.0' // 1.2.1
+
+    //card view
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    //facebook login
+    implementation 'com.facebook.android:facebook-login:9.0.0' // 5.15.3
+
+    //google login
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    //google authenticate with firebase
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.firebase:firebase-database:20.0.0'
+
+    //crashlytics
+    implementation 'com.google.firebase:firebase-crashlytics:18.0.1'
+
+    //glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //get continues location
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+
+    //Map PollyUtil
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation "androidx.preference:preference-ktx:1.1.1"
+
+    //set font size for multiple screen
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    //retrofit gson and okhttp and rxjava
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.android.gms:play-services-basement:17.6.0'
+
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+    implementation 'com.google.code.gson:gson:2.8.6'
+}

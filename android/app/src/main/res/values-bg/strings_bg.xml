@@ -1,0 +1,175 @@
+<resources>
+
+    <!-- <string name="app_name">Roaming Protect</string> -->
+    <!-- <string name="roaming_protect">Roaming\nProtect</string> -->
+    <!-- <string name="roaming_protect_without_new_line">Roaming Protect</string> -->
+
+    <string name="attention">Внимание</string>
+    <string name="permission_usage_text">Приложението съхранява и изпраща информация за местоположението на устройството към сървъри на КРС, включително при минимизирано приложение, за статистически цели и подпомага обособяването на зони с повишен риск от нежелан роуминг. Изпратените данни са анонимни и не могат да се свържат с конкретно устройство или потребител.</string>
+
+    <!-- Titles -->
+    <string name="title_login">Вход</string>
+    <string name="title_registration">Регистрация</string>
+    <string name="title_home">Начало</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_telecoms">Забранителен списък с оператори</string>
+    <string name="title_history">История</string>
+    <string name="title_change_password">Промяна на парола</string>
+
+    <string name="nav_home">Защита</string>
+    <string name="nav_telecoms">Държави</string>
+    <string name="nav_history">История</string>
+
+    <string name="bulgarian_sim_required">Грешна СИМ карта</string>
+    <string name="bulgarian_sim_required_message">Roaming Protect работи само с българска СИМ карта</string>
+
+    <!-- REGISTRATION -->
+    <string name="new_registration">Нова регистрация</string>
+    <string name="login">Вход</string>
+    <string name="login_field">Вход</string>
+    <string name="login_title">Вход</string>
+    <string name="username">Потребителско име</string>
+    <string name="phone">Телефон</string>
+    <string name="email">Имейл</string>
+    <string name="password">Парола</string>
+    <string name="repeat_password">Повторете парола</string>
+    <string name="error_password_not_match">Паролата не съвпада.</string>
+    <string name="error_password_required">Задължително е да въведете парола.</string>
+    <string name="error_email_required">Задължително е да въведете имейл</string>
+    <string name="error_invalid_email">Невалиден имейл адрес</string>
+    <string name="error_repeat_password_required">Необходимо е да въведете паролата отново.</string>
+    <string name="error_password_length_pre">Минимална дължина на паролата</string>
+    <string name="error_password_length_post">символи</string>
+    <string name="registered_successfully">Успешна регистрация. Моля, потвърдете регистрацията си чрез линка, който ще получите на посочения от Вас имейл адрес.</string>
+    <string name="privacy_policy_link">Политика на поверителност</string>
+    <string name="policy_check_text">Прочетох и съм съгласен с <a href="https://roaming.crc.bg/privacy-policy">Политиката на поверителност</a></string>
+    <string name="accept_privacy_policy_text">Трябва да се съгласите с Политиката на поверителност!</string>
+    <string name="email_registration">Регистрация с имейл</string>
+    <string name="facebook_registration">Регистрация с Facebook</string>
+    <string name="google_registration">Регистрация с Google</string>
+
+    <!-- LOGIN -->
+    <string name="new_login">Вход</string>
+    <string name="email_login">Вход с имейл</string>
+    <string name="facebook_login">Вход с Facebook</string>
+    <string name="google_login">Вход с Google</string>
+    <string name="register">Регистрация</string>
+    <string name="forgot_password">Забравена парола</string>
+    <string name="txt_forgotten_password_description">Въведете използвания при регистрация имейл и ще получите линк за въвеждане на нова парола</string>
+    <string name="forgotten_password_send">Изпрати</string>
+    <string name="reset">Нова парола</string>
+    <string name="password_reset_successfully">Линк за генериране на нова парола е изпратен на Вашия мейл.</string>
+    <string name="wrong_credentials_description">Грешни данни за вход. Моля, попълнете данните правилно.</string>
+    <string name="wrong_credentials">Грешни данни за вход.</string>
+    <string name="unauthorized_user">Грешна парола и/или имейл.</string>
+
+    <!-- CHANGE PASSWORD -->
+    <string name="change_password">Промяна на парола</string>
+    <string name="confirm">Потвърди</string>
+    <string name="old_password">Стара парола</string>
+    <string name="new_password">Нова парола</string>
+    <string name="go_to_settings">Към настройки</string>
+    <string name="password_change_success">Вашата парола беше променена успешно!</string>
+    <string name="wrong_password">Грешна парола!</string>
+
+    <!-- MAIN MENU -->
+    <string name="home">Начало</string>
+    <string name="settings">Настройки</string>
+    <string name="list_of_telecom">Забранителен списък с оператори</string>
+    <string name="history">История</string>
+    <string name="logout">Изход</string>
+    <string name="menu">Меню</string>
+    <string name="txt_want_to_logout">Сигурни ли сте, че искате да излезете от приложението?</string>
+
+    <!-- HOME -->
+    <string name="unintentional_roaming">Несъзнателен роуминг</string>
+    <string name="unintentional_roaming_text">Roaming Protect ще регистрира всеки опит за свързване с чуждестранна мрежа, част от Вашият персонален забранителен списък, и ще Ви предупреди при навлизане в зона с висок риск от несъзнателен роуминг. За да избегнете натрупването на високи сметки при използването на Вашето устройство на територията на Република България, следва да конфигурирате Вашият забранителен списък.</string>
+    <string name="more">Конфигурирай</string>
+
+    <!-- LIST OF TELECOM -->
+    <string name="list_of_telecom_choose">Списък с телекоми за избор</string>
+    <string name="list_of_telecoms_subtitle">Моля, изберете операторите, за които искате да бъдете уведомени при опит за свързване (несъзнателен роуминг)</string>
+    <string name="telecom">Телеком</string>
+    <string name="code">MCC + MNC код</string>
+    <string name="code_short">MCC/MNC</string>
+
+    <!-- SETTINGS -->
+    <string name="mobile_data">Мобилни данни</string>
+    <string name="data_roaming">Данни в роуминг</string>
+    <string name="notification">Известия</string>
+    <string name="internet_connection">Интернет връзка!</string>
+    <string name="internet_not_connection">Моля, проверете Вашата интернет връзка и опитайте отново.</string>
+    <string name="telecom_no_internet">Списъкът с оператори не може да бъде зареден, поради липса на интернет връзка!</string>
+    <string name="telecom_no_update">Списъкът с оператор не може да бъде обнови, поради липса на интернет връзка!</string>
+    <string name="history_no_internet">Историята не може да бъде заредена, поради липса на интернет връзка!</string>
+    <string name="internet_connection_check">Няма интернет връзка.</string>
+    <string name="txt_retry">Опитайте отново</string>
+    <string name="txt_cancel">Откажи</string>
+    <string name="txt_done">Готово</string>
+    <string name="txt_settings_charge_avoid">За да избегнете висока сметка/допълнителни такси от несъзнателен роуминг следва да спрете Вашия достъп до мобилни данни или роуминг услуги</string>
+    <string name="miui_warning">Операционната система на Вашето устройство, не ни позволява да прочетем настройките за роуминг. Моля, използвайте настройките на устройството.</string>
+    <string name="notification_alert_message">Вашите нотификации са спрени!</string>
+
+    <!-- CONSTANT NOTIFICATION -->
+    <string name="roaming_sticky_notification">Проследяваме Вашата локация, за да можем да Ви предупредим при риск от несъзнателен роуминг.</string>
+
+    <!-- ROAMING NOTIFICATION -->
+    <string name="roaming_notification">Има опит за свързване с чуждестранна мрежа, част от забранителния Ви списък с оператори</string>
+    <string name="roaming_alert_title">Сигнал за несъзнателен роуминг</string>
+    <string name="roaming_alert_message">В момента сте свързани с</string>
+
+    <!-- HISTORY -->
+    <string name="history_descr">Свързвания с чуждестранна мрежа, включена в забранителния Ви списък</string>
+    <string name="time_stamp">Дата и час</string>
+    <string name="gps_coordinates">GPS координати</string>
+    <string name="network">Мрежа</string>
+    <string name="no_data_found">Няма история</string>
+    <string name="date">Дата</string>
+
+    <!-- LOCATION PERMISSION DECLINE -->
+    <string name="permission_message">Необходимо е да позволите достъп до локация.</string>
+    <string name="try_again">Опитайте отново</string>
+
+    <!-- SYSTEM -->
+    <string name="email_sending_fail">Не може да изпрати имейл</string>
+
+    <string name="already_login">Потребителят вече е логнат на това устройство</string>
+    <string name="server_error">Проблем при комуникацията със сървъра</string>
+    <string name="error">Грешка</string>
+    <string name="email_already_registered">Вече има създаден профил с този имейл адрес.</string>
+    <string name="failed_google_login">Проблем при вход с Google</string>
+    <string name="failed_google_registration">Проблем при регистрация с Google</string>
+    <string name="failed_facebook_login">Проблем при вход с Facebook</string>
+    <string name="failed_facebook_registration">Проблем при регистрация с Facebook</string>
+
+    <!-- COMMON -->
+    <string name="cancel">Откажи</string>
+    <string name="go_to_login">Отидете на Вход</string>
+    <string name="go_to_registration">Отидете на Регистрация</string>
+
+    <!-- ZONE -->
+    <string name="warning_roaming_zone_title">Внимание, зона с риск от несъзнателен роуминг</string>
+    <string name="warning_roaming_zone_subtitle">Устройството е в зона с риск от несъзнателен роуминг.</string>
+
+    <!-- UNKNOWN -->
+    <string name="notification_text">Ще ви покажем известие когато се установи несъзнателен роуминг със забранена от вас мрежа</string>
+    <string name="you_are_login_with">Логнат си с</string>
+    <string name="you_are_register_with">Регистриран си с</string>
+    <string name="you_are_not_register">Не си регистриран с този имейл</string>
+    <string name="check_password">Провери паролата</string>
+    <string name="done">Готово</string>
+    <string name="ok">OK</string>
+    <string name="back_again">Натисне "Обратно" за изход</string>
+    <string name="macedonia_prefix">Северна Македония</string>
+    <string name="serbia_prefix">Сърбия</string>
+    <string name="turkey_prefix">Турция</string>
+    <string name="romania_prefix">Румъния</string>
+    <string name="greece_prefix">Гърция</string>
+    <string name="dismiss">Пропусни</string>
+    <string name="permission">Достъп</string>
+    <string name="gps_alert_title">Вашият GPS е изключен</string>
+    <string name="gps_alert_message">Roaming Protect има нужда от пуснат GPS, за да работи коректно!</string>
+
+    <!--Error  messages-->
+    <string name="your_session_is_expired">Сесията е изтекла или не си логнат.</string>
+</resources>

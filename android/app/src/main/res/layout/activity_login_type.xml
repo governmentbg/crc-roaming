@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/button_blue"
+    tools:context=".activity.RegistrationTypeActivity">
+    <include layout="@layout/internet_connectivity_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/apbMain"
+        android:layout_marginStart="@dimen/screen_padding_extra_large"
+        android:layout_marginEnd="@dimen/screen_padding_extra_large">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_125sdp"
+            android:layout_marginTop="@dimen/component_gap_large"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/image_description"
+            android:src="@drawable/main_logo" />
+
+        <TextView
+            android:id="@+id/tv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/roaming_protect_without_new_line"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_header2" />
+
+        <Button
+            android:id="@+id/btnEmailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_logo"
+            android:layout_marginTop="@dimen/component_gap_large"
+            android:drawableStart="@drawable/ic_email"
+            android:background="@drawable/ripple_rect_corner_border_grey"
+            android:minHeight="@dimen/edit_text_height"
+            android:paddingStart="@dimen/padding_very_large"
+            android:paddingEnd="@dimen/padding_large"
+            android:drawablePadding="@dimen/padding_very_large"
+            android:text="@string/email_login"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_large"
+            android:gravity="start|center_vertical"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/btnFacebookLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnEmailLogin"
+            android:layout_marginTop="@dimen/component_space_large"
+            android:drawableStart="@drawable/ic_facebook_logo"
+            android:background="@drawable/ripple_rect_corner_border_grey"
+            android:minHeight="@dimen/edit_text_height"
+            android:paddingStart="@dimen/padding_very_large"
+            android:paddingEnd="@dimen/padding_large"
+            android:drawablePadding="@dimen/padding_very_large"
+            android:text="@string/facebook_login"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_large"
+            android:gravity="start|center_vertical"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/btnGoogleLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnFacebookLogin"
+            android:textColor="@color/black"
+            android:background="@drawable/ripple_rect_corner_border_grey"
+            android:drawableStart="@drawable/ic_google_logo"
+            android:layout_marginTop="@dimen/component_space_large"
+            android:minHeight="@dimen/edit_text_height"
+            android:paddingStart="@dimen/padding_very_large"
+            android:paddingEnd="@dimen/padding_large"
+            android:drawablePadding="@dimen/padding_very_large"
+            android:text="@string/google_login"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size_normal_large"
+            android:gravity="start|center_vertical"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_register"
+            android:layout_below="@+id/btnGoogleLogin"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/component_space_extra_huge"
+            android:background="@drawable/ripple_rect_blue_corner_border_white"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="@dimen/padding_very_large"
+            android:paddingEnd="@dimen/padding_very_large"
+            android:drawablePadding="@dimen/padding_very_large"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_size_normal_large"
+            android:gravity="start|center_vertical"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <TextView
+            android:id="@+id/tv_privacy_policy_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnRegister"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/component_space_large"
+            android:textSize="@dimen/text_size_header"
+            android:gravity="center"/>
+
+        <ProgressBar
+            android:id="@+id/pbLoginType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/permissionDialogueInclude"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:clickable="true">
+        <include
+            layout="@layout/dialogue_permission_usage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>

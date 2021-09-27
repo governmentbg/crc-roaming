@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true">
+
+        <shape android:shape="oval">
+            <stroke android:width="6dp" android:color="@color/depth_transparent" />
+            <size android:width="@dimen/switch_thumb_size_medium" android:height="@dimen/switch_thumb_size_medium" />
+            <solid android:color="@color/white" />
+        </shape>
+
+    </item>
+
+
+    <item android:state_checked="false">
+
+        <shape android:shape="oval">
+            <size android:width="@dimen/switch_thumb_size_medium" android:height="@dimen/switch_thumb_size_medium" />
+            <stroke android:width="6dp" android:color="@color/depth_transparent" />
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+
+
+</selector>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/component_space_small"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/card_elevation_8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:padding="@dimen/component_space"
+            android:baselineAligned="false">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_normal_small" />
+
+                        <TextView
+                            android:id="@+id/tvTimestamp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/time_stamp"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/text_size_normal_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gps_coordinates"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_normal_small" />
+
+                        <TextView
+                            android:id="@+id/tvGpsCoordinates"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gps_coordinates"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/text_size_normal_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/telecom"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_normal_small" />
+
+                        <TextView
+                            android:id="@+id/tvMccMncCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/code_short"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/text_size_normal_small" />
+                </LinearLayout>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tvTelecoms"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="0.9"-->
+        <!--            android:text="@string/network"-->
+        <!--            android:textColor="@color/text_gray"-->
+        <!--            android:textSize="@dimen/text_size_normal_small" />-->
+
+        </LinearLayout>
+</androidx.cardview.widget.CardView>

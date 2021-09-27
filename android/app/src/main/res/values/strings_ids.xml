@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="macedonia_country_code" translatable="false">+389</string>
+    <string name="serbia_country_code" translatable="false">+381</string>
+    <string name="turkey_country_code" translatable="false">+90</string>
+    <string name="romania_country_code" translatable="false">+40</string>
+    <string name="greece_country_code" translatable="false">+30</string>
+
+    <string name="macedonia_mcc" translatable="false">294</string>
+    <string name="serbia_mcc" translatable="false">220</string>
+    <string name="turkey_mcc" translatable="false">286</string>
+    <string name="romania_mcc" translatable="false">226</string>
+    <string name="greece_mcc" translatable="false">202</string>
+
+    <!-- Facebook for RoamingApp-CRC -->
+    <string name="facebook_app_id" translatable="false">1157557438039642</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1157557438039642</string>
+
+    <!--Google Map
+    <string name="google_maps_key">???</string>
+    -->
+
+</resources>

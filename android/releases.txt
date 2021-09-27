@@ -1,0 +1,4 @@
+1. CRC (RoamingApp-CRC) vs Other
+a) google-services.json: copy from the right directory
+b) facebook_app_id/fb_login_protocol_scheme: comment/uncomment in strings_ids.xml
+c) BASE_URL/GET_PART in Constants.kt

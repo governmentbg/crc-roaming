@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="true"
+    tools:context=".activity.RegistrationActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/image_description"
+        android:foreground="@color/foreground_transparent"
+        android:src="@drawable/background" />
+
+    <include android:id="@+id/header_include" layout="@layout/header" />
+    <include layout="@layout/internet_connectivity_view" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/header_include">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding_extra_large"
+            android:layout_marginEnd="@dimen/screen_padding_extra_large"
+            android:theme="@style/EditTextTheme">
+
+            <LinearLayout
+                android:id="@+id/reg_fields_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/component_space"
+                    android:hint="@string/email"
+                    android:textColorHint="@color/text_blue"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/text_blue">
+
+                    <bg.crc.roamingapp.customview.CustomTextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@null"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@color/text_blue"
+                        android:textColorHighlight="@color/text_blue"
+                        android:textColorLink="@color/text_blue">
+
+                    </bg.crc.roamingapp.customview.CustomTextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/component_space"
+                    android:hint="@string/password"
+                    android:textColorHint="@color/text_blue"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/text_blue">
+
+                    <bg.crc.roamingapp.customview.CustomTextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:textColor="@color/text_blue"
+                        android:textColorHighlight="@color/text_blue"
+                        android:textColorLink="@color/text_blue">
+
+                    </bg.crc.roamingapp.customview.CustomTextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/component_space"
+                    android:hint="@string/repeat_password"
+                    android:textColorHint="@color/text_blue"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxStrokeColor="@color/text_blue">
+
+                    <bg.crc.roamingapp.customview.CustomTextInputEditText
+                        android:id="@+id/etRepeatPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:imeOptions="actionDone"
+                        android:textColor="@color/text_blue"
+                        android:textColorHighlight="@color/text_blue"
+                        android:textColorLink="@color/text_blue">
+
+                    </bg.crc.roamingapp.customview.CustomTextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRegister"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reg_fields_input"
+                android:layout_marginTop="@dimen/component_space_huge"
+                android:layout_marginBottom="@dimen/component_space_normal"
+                android:background="@drawable/selector_button_blue"
+                android:minHeight="@dimen/edit_text_height"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_normal_large" />
+
+            <ProgressBar
+                android:id="@+id/pbRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

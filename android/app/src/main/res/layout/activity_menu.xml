@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rect_corner_top_radius_semi_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/screen_padding_extra_large"
+        android:layout_marginEnd="@dimen/screen_padding_extra_large"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_new_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/component_space_extra_huge"
+            android:text="@string/menu"
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_size_header2"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/btnHome"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/component_gap"
+            android:background="@drawable/selector_button_blue"
+            android:minHeight="@dimen/edit_text_height"
+            android:text="@string/home"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal_large" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/component_space_large"
+            android:background="@drawable/selector_button_blue"
+            android:minHeight="@dimen/edit_text_height"
+            android:text="@string/settings"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal_large" />
+
+        <Button
+            android:id="@+id/btnListOfTelecom"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/component_space_large"
+            android:background="@drawable/selector_button_blue"
+            android:minHeight="@dimen/edit_text_height"
+            android:text="@string/list_of_telecom"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal_large" />
+
+        <Button
+            android:id="@+id/btnHistory"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/component_space_large"
+            android:background="@drawable/selector_button_blue"
+            android:minHeight="@dimen/edit_text_height"
+            android:text="@string/history"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal_large" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/component_space_large"
+            android:layout_marginBottom="@dimen/component_space_large"
+            android:background="@drawable/selector_button_blue"
+            android:minHeight="@dimen/edit_text_height"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal_large" />
+    </LinearLayout>
+
+</RelativeLayout>
+

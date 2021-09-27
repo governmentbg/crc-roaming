@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="macedonia_telecom">
+        <item>ONE/Cosmofone</item>
+        <item>ONE/Cosmofone</item>
+        <item>T-Mobile/Mobimak</item>
+        <item>VIP Mobile</item>
+    </string-array>
+
+    <string-array name="macedonia_telecom_mnc">
+        <item>75</item>
+        <item>02</item>
+        <item>01</item>
+        <item>03</item>
+    </string-array>
+
+    <string-array name="serbia_telecom">
+        <item>MTS/Telekom Srbija</item>
+        <item>Telenor/Mobtel</item>
+        <item>Telenor/Mobtel</item>
+        <item>VIP Mobile</item>
+    </string-array>
+
+    <string-array name="serbia_telecom_mnc">
+        <item>03</item>
+        <item>01</item>
+        <item>02</item>
+        <item>05</item>
+    </string-array>
+
+    <string-array name="turkey_telecom">
+        <item>AVEA/Aria</item>
+        <item>AVEA/Aria</item>
+        <item>Turkcell</item>
+        <item>Vodafone-Telsim</item>
+    </string-array>
+
+    <string-array name="turkey_telecom_mnc">
+        <item>04</item>
+        <item>03</item>
+        <item>01</item>
+        <item>02</item>
+    </string-array>
+
+    <string-array name="romania_telecom">
+        <item>Cosmote</item>
+        <item>Enigma Systems</item>
+        <item>Lycamobile</item>
+        <item>Orange</item>
+        <item>RCS RDS Digi Mobile</item>
+        <item>Romtelecom SA</item>
+        <item>Telemobil/Zapp</item>
+        <item>Vodafone</item>
+        <item>Telemobil/Zapp</item>
+    </string-array>
+
+    <string-array name="romania_telecom_mnc">
+        <item>03</item>
+        <item>11</item>
+        <item>16</item>
+        <item>10</item>
+        <item>05</item>
+        <item>02</item>
+        <item>06</item>
+        <item>01</item>
+        <item>04</item>
+    </string-array>
+
+    <string-array name="greece_telecom">
+        <item>AMD Telecom SA</item>
+        <item>Cosmote</item>
+        <item>Cosmote</item>
+        <item>CyTa Mobile</item>
+        <item>Organismos Sidirodromon Ellados (OSE)</item>
+        <item>OTE Hellenic Telecommunications Organization SA</item>
+        <item>Tim/Wind</item>
+        <item>Tim/Wind</item>
+        <item>Vodafone</item>
+    </string-array>
+
+    <string-array name="greece_telecom_mnc">
+        <item>07</item>
+        <item>02</item>
+        <item>01</item>
+        <item>14</item>
+        <item>04</item>
+        <item>03</item>
+        <item>10</item>
+        <item>09</item>
+        <item>05</item>
+    </string-array>
+
+</resources>

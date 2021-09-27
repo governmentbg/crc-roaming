@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "47570884298",
+    "project_id": "crc-roaming",
+    "storage_bucket": "crc-roaming.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47570884298:android:2f07352baa3343f2218633",
+        "android_client_info": {
+          "package_name": "bg.crc.roamingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47570884298-245do2802erjc9toq2t3u2ata4ngtfaa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bg.crc.roamingapp",
+            "certificate_hash": "dd3e88042eba5e13f4bf026bf81b87bf4e5146d7"
+          }
+        },
+        {
+          "client_id": "47570884298-gqp010t2thjoutn8uvuaru5rr57gu8eo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bg.crc.roamingapp",
+            "certificate_hash": "d9beaba5e14fec5b8ee3bab725889dca979b68fd"
+          }
+        },
+        {
+          "client_id": "47570884298-n0jljpk4fme9u5dtuhvqiihve01g8qpa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bg.crc.roamingapp",
+            "certificate_hash": "0c29ac545575d5aa19bfe1602264f3a70c0e52fc"
+          }
+        },
+        {
+          "client_id": "47570884298-itek4v0o4mrr4k7u0dgnrjtj565otmup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjT6ALb0UwswQafRyXB9QVck13PYcqc0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47570884298-itek4v0o4mrr4k7u0dgnrjtj565otmup.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "47570884298-kihloeg46enhb414tmjl2h49t61laeaa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bg.infosys.roamingprotect"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="@dimen/screen_padding_large"
+        app:cardCornerRadius="@dimen/drawable_radius_corner_large">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/component_space_huge"
+                android:contentDescription="@string/image_description"
+                android:src="@drawable/ic_dialog_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/component_space_extra_large"
+                android:text="@string/attention"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_header2"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/component_space_large"
+                android:layout_marginTop="@dimen/component_space_normal"
+                android:layout_marginEnd="@dimen/component_space_large"
+                android:text="@string/permission_usage_text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal_large" />
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/component_space_large"
+                android:layout_marginTop="@dimen/component_space_extra_huge"
+                android:layout_marginEnd="@dimen/component_space_large"
+                android:layout_marginBottom="@dimen/component_space_extra_huge"
+                android:background="@drawable/ripple_rect_corner_border_blue"
+                android:minHeight="@dimen/edit_text_height"
+                android:text="@string/ok"
+                android:textAllCaps="false"
+                android:textColor="@color/button_blue"
+                android:textSize="@dimen/text_size_normal_large"
+                style="?android:attr/borderlessButtonStyle"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

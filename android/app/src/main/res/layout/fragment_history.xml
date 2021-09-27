@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:background="@color/white">
+
+        <include android:id="@+id/header_layout" layout="@layout/header" />
+        <include layout="@layout/internet_connectivity_view" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/screen_padding"
+            android:layout_marginEnd="@dimen/screen_padding"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@id/header_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/historyDescr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/history_descr" />
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/lnHeader"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_10sdp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="4"-->
+<!--                android:visibility="gone"-->
+<!--                tools:visibility="visible">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="0.9"-->
+<!--                    android:text="@string/time_stamp"-->
+<!--                    android:textColor="@color/semi_black"-->
+<!--                    android:textSize="@dimen/text_size_normal" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1.2"-->
+<!--                    android:text="@string/gps_coordinates"-->
+<!--                    android:textColor="@color/semi_black"-->
+<!--                    android:textSize="@dimen/text_size_normal" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="0.9"-->
+<!--                    android:text="@string/network"-->
+<!--                    android:textColor="@color/semi_black"-->
+<!--                    android:textSize="@dimen/text_size_normal" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="0.9"-->
+<!--                    android:text="@string/code_short"-->
+<!--                    android:textColor="@color/semi_black"-->
+<!--                    android:textSize="@dimen/text_size_normal" />-->
+<!--            </LinearLayout>-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHistory"
+                android:layout_margin="@dimen/component_space"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvNoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/component_space_huge"
+                android:text="@string/no_data_found"
+                android:textColor="@color/text_blue"
+                android:textSize="@dimen/text_size_header2"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/pbHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </RelativeLayout>
+</layout>

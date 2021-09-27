@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_menu_home"
+        android:title="@string/nav_home"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_menu_history"
+        android:title="@string/nav_history"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/navigation_telecoms"
+        android:icon="@drawable/ic_menu_telecoms"
+        android:title="@string/nav_telecoms"
+        app:showAsAction="ifRoom|withText" />
+</menu>

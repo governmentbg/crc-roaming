@@ -1,0 +1,23 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+    <keep_state_fragment
+        android:id="@+id/navigation_home"
+        android:name="bg.crc.roamingapp.fragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <keep_state_fragment
+        android:id="@+id/navigation_telecoms"
+        android:name="bg.crc.roamingapp.fragment.TelecomsFragment"
+        android:label="@string/title_telecoms"
+        tools:layout="@layout/fragment_telecoms" />
+
+    <keep_state_fragment
+        android:id="@+id/navigation_history"
+        android:name="bg.crc.roamingapp.fragment.HistoryFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_history" />
+</navigation>

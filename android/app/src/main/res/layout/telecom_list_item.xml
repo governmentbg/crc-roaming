@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/component_space_normal">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chbTelecom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/telecomeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/component_space"
+        android:layout_toEndOf="@+id/chbTelecom"
+        android:layout_toStartOf="@+id/tvMccMncCode"
+        android:text="@string/telecom"
+        android:textSize="@dimen/text_size_normal_large"
+        android:textColor="@color/semi_black"/>
+
+    <TextView
+        android:id="@+id/tvMccMncCode"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/text_size_normal_large"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/semi_black"/>
+
+</RelativeLayout>
+

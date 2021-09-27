@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/component_space_small"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/card_elevation_8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/component_space_normal"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rl_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/chbCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_image"
+                    android:layout_toEndOf="@id/chbCountry"
+                    android:layout_width="@dimen/image_flag_height"
+                    android:layout_height="@dimen/image_flag_height"
+                    app:cardCornerRadius="@dimen/card_radius"
+                    android:layout_margin="@dimen/_3sdp">
+
+                    <ImageView
+                        android:id="@+id/ivCountryLogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/image_description"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/tvCountryName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/component_space_normal"
+                    android:layout_toStartOf="@+id/ivEuFlag"
+                    android:layout_toEndOf="@+id/card_image"
+                    android:textColor="@color/text_blue"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivEuFlag"
+                    android:layout_width="@dimen/image_flag_height"
+                    android:layout_height="@dimen/image_flag_height"
+                    android:src="@drawable/ic_europe_flag"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/component_space_normal"
+                    android:layout_toStartOf="@+id/tvCountryCode"
+                    android:contentDescription="@string/image_description" />
+
+                <TextView
+                    android:id="@+id/tvCountryCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/text_blue"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_one"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_header"
+                android:layout_marginTop="10dp"
+                android:background="@color/view_blue" />
+
+            <RelativeLayout
+                android:id="@+id/rlTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_one"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/telecomeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telecom"
+                    android:textSize="@dimen/text_size_normal_small" />
+
+                <TextView
+                    android:id="@+id/tvMccNncCode"
+                    android:layout_width="@dimen/text_width"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/code"
+                    android:textSize="@dimen/text_size_normal_small" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTelecom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlTitle"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/llTelecomsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlTitle"
+                android:orientation="vertical">
+
+                <include layout="@layout/telecom_list_item" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

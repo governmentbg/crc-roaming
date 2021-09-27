@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2075C4</color>
+    <color name="colorPrimaryDark">#2075C4</color>
+    <color name="colorAccent">#2075C4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_blue">#2975BB</color>
+    <color name="button_blue">#2075C3</color>
+    <color name="button_light_blue">#1877F2</color>
+    <color name="drawable_gray">#6A6A6A</color>
+    <color name="header_blue">#2075C4</color>
+    <color name="depth_transparent">#00000000</color>
+    <color name="foreground_transparent">#D9FFFFFF</color>
+    <color name="view_blue">#BBDDF6</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#2075C4</color>
+    <color name="drawable_gray_light">#45707070</color>
+
+    <color name="gradient_start">#BBDDF6</color>
+    <color name="gradient_end">#2075C4</color>
+    <color name="semi_black">#333333</color>
+
+    <color name="border_button">#2B73B6</color>
+    <color name="text_dialog_button">#2B479D</color>
+    <color name="text_gray">#6A6A6A</color>
+
+</resources>

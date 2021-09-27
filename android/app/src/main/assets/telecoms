@@ -1,0 +1,117 @@
+[
+  {
+    "code": "294",
+    "countrycode": "+389",
+    "img": 2131230885,
+    "name": "Macedonia",
+    "display_name":"Северна Македония",
+    "telecommcc": [
+      "294 75",
+      "294 02",
+      "294 01",
+      "294 03"
+    ],
+    "telecomname": [
+      "ONE/Cosmofone",
+      "ONE/Cosmofone",
+      "T-Mobile/Mobimak",
+      "VIP Mobile"
+    ]
+  },
+  {
+    "code": "220",
+    "countrycode": "+381",
+    "img": 2131230892,
+    "name": "Serbia",
+    "display_name":"Сърбия",
+    "telecommcc": [
+      "220 03",
+      "220 01",
+      "220 02",
+      "220 05"
+    ],
+    "telecomname": [
+      "MTS/Telekom Srbija",
+      "Telenor/Mobtel",
+      "Telenor/Mobtel",
+      "VIP Mobile"
+    ]
+  },
+  {
+    "code": "286",
+    "countrycode": "+90",
+    "img": 2131230893,
+    "name": "Turkey",
+    "display_name":"Турция",
+    "telecommcc": [
+      "286 04",
+      "286 03",
+      "286 01",
+      "286 02"
+    ],
+    "telecomname": [
+      "AVEA/Aria",
+      "AVEA/Aria",
+      "Turkcell",
+      "Vodafone-Telsim"
+    ]
+  },
+  {
+    "code": "226",
+    "countrycode": "+40",
+    "img": 2131230891,
+    "name": "Romania",
+    "display_name":"Румъния",
+    "telecommcc": [
+      "226 03",
+      "226 11",
+      "226 16",
+      "226 10",
+      "226 05",
+      "226 02",
+      "226 06",
+      "226 01",
+      "226 04"
+    ],
+    "telecomname": [
+      "Cosmote",
+      "Enigma Systems",
+      "Lycamobile",
+      "Orange",
+      "RCS RDS Digi Mobile",
+      "Romtelecom SA",
+      "Telemobil/Zapp",
+      "Vodafone",
+      "Telemobil/Zapp"
+    ]
+  },
+  {
+    "code": "202",
+    "countrycode": "+30",
+    "img": 2131230881,
+    "name": "Greece",
+    "display_name":"Гърция",
+    "telecommcc": [
+      "202 07",
+      "202 02",
+      "202 01",
+      "202 14",
+      "202 04",
+      "202 03",
+      "202 10",
+      "202 09",
+      "202 05"
+    ],
+    "telecomname": [
+      "AMD Telecom SA",
+      "Cosmote",
+      "Cosmote",
+      "CyTa Mobile",
+      "Organismos Sidirodromon Ellados (OSE)",
+      "OTE Hellenic Telecommunications Organization SA",
+      "Tim/Wind",
+      "Tim/Wind",
+      "Vodafone"
+    ]
+  }
+]
